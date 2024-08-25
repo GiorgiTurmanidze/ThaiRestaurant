@@ -1,0 +1,450 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  background-image: url(./bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 80% 10%;
+}
+
+.box {
+  background-color: rgba(255, 228, 196, 0.332);
+  width: 100%;
+  height: 120vh;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 5;
+  height: 100px;
+  background-color: rgba(170, 154, 133, 0.86);
+  box-shadow: 0px 5px 10px 5px rgb(144, 129, 112);
+}
+header .left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 20px;
+}
+header .left img {
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+header .left .hiddenText {
+  left: 90px;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  top: 30px;
+  transition: all 0.3s ease;
+}
+header .left .hiddenText .cont {
+  position: absolute;
+  background-color: rgb(195, 170, 139);
+  animation: growingWidth 3s ease forwards;
+  left: -30px;
+  top: -5px;
+  height: 50px;
+  box-shadow: 0px 0px 50px 5px rgb(244, 213, 176);
+}
+header .left .hiddenText .narrowCont {
+  animation: reduceWidth 3s ease forwards;
+}
+header .left .hiddenText .moveBack {
+  animation: backLetters 0.5s ease forwards;
+}
+header .left .hiddenText span {
+  font-size: 24px;
+  font-family: "Nova Square", cursive;
+  animation: moveLetter 0.5s ease forwards;
+  cursor: default;
+}
+header .left .hiddenText p {
+  font-size: 24px;
+  cursor: default;
+  top: 10px;
+  font-family: "Nova Square", cursive;
+  animation: moveLetter 0.5s ease forwards;
+}
+header .mid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 20px;
+}
+header .mid nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  gap: 15px;
+}
+header .mid nav ul span {
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
+  top: 3px;
+  cursor: default;
+}
+header .mid nav ul li {
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  font-weight: 600;
+  font-size: 24px;
+}
+header .right {
+  display: flex;
+  margin: 0px 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+main .centerBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  width: 40%;
+  height: 100vh;
+  margin: 0;
+}
+main .centerBox .centerText {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  position: relative;
+  left: -50px;
+  cursor: default;
+}
+main .centerBox .centerText h1 {
+  font-size: 90px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 2px;
+  font-family: "Grey Qo";
+}
+main .centerBox .centerText h1:nth-child(2) {
+  position: relative;
+  top: -30px;
+  left: 100px;
+}
+
+.top3 {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  display: flex;
+  top: 0;
+  flex-direction: column;
+  padding: 100px 60px;
+}
+.top3 .Cuisine {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+.top3 .Cuisine .image {
+  position: relative;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+.top3 .Cuisine .image img {
+  height: 700px;
+}
+.top3 .Cuisine .text {
+  width: 500px;
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.top3 .Cuisine .text p {
+  font-family: "Patrick Hand";
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.top3 .Regional {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+.top3 .Regional .image {
+  position: relative;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+.top3 .Regional .image img {
+  height: 500px;
+}
+.top3 .Regional .text {
+  width: 500px;
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.top3 .Regional .text p {
+  font-family: "Patrick Hand";
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.top3 .Royal {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  top: 30px;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+.top3 .Royal .image {
+  position: relative;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+.top3 .Royal .image img {
+  height: 400px;
+}
+.top3 .Royal .text {
+  width: 500px;
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.top3 .Royal .text p {
+  font-family: "Patrick Hand";
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.AllTime {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  top: 100px;
+  padding-bottom: 100px;
+}
+.AllTime .allTimeBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  width: 90%;
+  padding: 30px 20px;
+  background-color: #F9F2EA;
+  height: 110vh;
+  border-radius: 15px;
+}
+.AllTime .allTimeBox .title {
+  position: relative;
+}
+.AllTime .allTimeBox .title h1 {
+  font-family: "Edu VIC WA NT Beginner";
+  font-size: 60px;
+  color: rgb(0, 0, 0);
+}
+.AllTime .allTimeBox .topBox {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: 50px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.AllTime .allTimeBox .topBox .top1:nth-child(2) {
+  position: relative;
+  top: 40px;
+}
+.AllTime .allTimeBox .topBox .top1 {
+  display: flex;
+  flex-direction: column;
+}
+.AllTime .allTimeBox .topBox .top1 img {
+  width: 375px;
+  transition: all 0.5s ease;
+}
+.AllTime .allTimeBox .topBox .top1 img:hover {
+  transform: scale(1.05);
+}
+.AllTime .allTimeBox .topBox .top1 span {
+  font-size: 30px;
+  font-family: "Patrick Hand";
+  font-weight: 600;
+  position: relative;
+  top: 10px;
+}
+
+.Active {
+  cursor: default;
+  color: white;
+}
+
+.Menu {
+  cursor: pointer;
+}
+
+.logInIcon {
+  cursor: pointer;
+  font-size: 24px;
+  color: black;
+  transition: all 0.3s ease;
+}
+.logInIcon:hover {
+  color: white;
+}
+
+.spinIt {
+  animation: spinLogo 2.4s ease-in-out;
+}
+
+@keyframes spinLogo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveLetter {
+  from {
+    left: -50px;
+  }
+  to {
+    left: 10px;
+  }
+}
+@keyframes backLetters {
+  from {
+    left: 10px;
+  }
+  to {
+    left: -200px;
+  }
+}
+@keyframes growingWidth {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 230px;
+  }
+}
+@keyframes reduceWidth {
+  from {
+    width: 230px;
+  }
+  to {
+    width: 0px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .AllTime .allTimeBox .topBox .top1 img {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .top3 .infoDishes .text {
+    width: 300px;
+  }
+  .top3 .infoDishes .text p {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .AllTime .allTimeBox .topBox .top1 img {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .top3 .infoDishes {
+    flex-direction: column;
+  }
+  .top3 .infoDishes .text {
+    flex-direction: row;
+    width: 500px;
+  }
+  .AllTime .allTimeBox .topBox .top1 span {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .AllTime .allTimeBox .topBox {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .top3 .infoDishes {
+    flex-direction: column;
+  }
+  .top3 .infoDishes .text {
+    flex-direction: column;
+    width: 400px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .top3 .infoDishes .text {
+    flex-direction: column;
+    width: 300px;
+  }
+  .top3 .infoDishes .text p {
+    position: relative;
+    left: 10px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .Home {
+    display: none;
+  }
+  .slash {
+    display: none;
+  }
+  main .centerBox .centerText h1 {
+    font-size: 60px;
+  }
+}/*# sourceMappingURL=start.css.map */

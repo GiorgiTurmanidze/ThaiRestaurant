@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  background-image: url(./bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 80% 10%;
+}
+
+.shadow {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 228, 196, 0.332);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alertBox {
+  display: flex;
+  position: absolute;
+  top: -200px;
+  z-index: 3;
+  width: 350px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(177, 159, 137, 0.74);
+  border-radius: 20px;
+  box-shadow: 3px 5px 0px 0px rgb(93, 84, 72);
+  height: 100px;
+  transition: all 0.4s ease;
+}
+.alertBox .alt {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+}
+.alertBox .alt .icon {
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 3px;
+}
+.alertBox .alt .text {
+  color: white;
+  font-family: "Patrick Hand";
+  font-size: 24px;
+  cursor: default;
+}
+
+.container {
+  height: 60vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 25%;
+  top: -30px;
+}
+
+form {
+  position: relative;
+  background-color: rgba(213, 191, 164, 0.821);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 60vh;
+  box-shadow: 5px 5px 3px 0px rgb(126, 114, 98);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 100px 100px 100px;
+  min-width: 295px;
+  padding: 10px 20px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
+}
+form label {
+  font-family: "Patrick Hand";
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+form input {
+  margin-bottom: 5px;
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 150px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.sub {
+  font-size: 20px;
+  font-family: "Nova Square";
+  width: 100px;
+  height: 30px;
+  top: 350px;
+  left: 130px;
+  position: absolute;
+  background-color: bisque;
+  border: 1px solid rgb(147, 124, 96);
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 bisque;
+  transition: all 0.5s ease-out;
+  outline: none;
+}
+.sub:hover {
+  color: white;
+  box-shadow: inset 100px 0 0 0 rgb(147, 124, 96);
+}
+
+.title {
+  font-family: "Edu VIC WA NT Beginner";
+  font-size: 60px;
+  color: white;
+  position: relative;
+  top: -20px;
+  left: 0px;
+  cursor: default;
+}
+
+@media screen and (max-width: 1250px) {
+  form {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 40px);
+    height: 400px;
+  }
+  form .sub {
+    left: 100px;
+    top: 330px;
+  }
+  form .inputBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .title {
+    left: 40px;
+  }
+  form .inputBox label {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: 50%;
+    min-width: 50%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .shadow {
+    justify-content: start;
+    padding-left: 10px;
+  }
+}/*# sourceMappingURL=register.css.map */

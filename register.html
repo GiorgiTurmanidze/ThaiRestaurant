@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Restaurant</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Grey+Qo&family=Nova+Square&family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="shadow">
+
+        <div class="alertBox">
+            <div class="agreeAlt alt">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-check" style="color: #36ff39;"></i>
+                </div>
+
+                <div class="text">
+                    <p>You've Successfully Registered.</p>
+                </div>
+            </div>
+
+            <div class="denyAlt alt">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-xmark" style="color: #f50000;"></i>
+                </div>
+
+                <div class="text">
+                    <p>This Account Already Exists.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h1 class="title">Register</h1>
+            <form id="myForm" method="post">
+                <div class="inputBox">
+                    <label for="uNumber">Phone</label>
+                    <input placeholder="123-456-789" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" name="pNumber" id="pNumber" required maxlength="11">
+                </div>
+
+                <div class="inputBox">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="fName">First Name</label>
+                    <input type="text" name="fName" id="fName" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="lName">Last Name</label>
+                    <input type="text" name="lName" id="lName" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="role">Role</label>
+                    <input type="text" name="role" id="role" required>
+                </div>
+
+                <button type="submit" class="sub">Sign Up</button>
+            </form>
+        </div>
+
+
+    </div>
+    
+
+    <script src="register.js"></script>
+</body>
+
+
+</html>
