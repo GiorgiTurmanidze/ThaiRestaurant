@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index: 4;
+  background-color: rgba(170, 154, 133, 0.86);
+  box-shadow: 0px 5px 10px 5px rgb(144, 129, 112);
+}
+header .left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 20px;
+}
+header .left img {
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+header .left .hiddenText {
+  left: 90px;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  top: 30px;
+  transition: all 0.3s ease;
+}
+header .left .hiddenText .cont {
+  position: absolute;
+  background-color: rgb(195, 170, 139);
+  animation: growingWidth 3s ease forwards;
+  left: -30px;
+  top: -5px;
+  height: 50px;
+  box-shadow: 0px 0px 50px 5px rgb(244, 213, 176);
+}
+header .left .hiddenText .narrowCont {
+  animation: reduceWidth 3s ease forwards;
+}
+header .left .hiddenText .moveBack {
+  animation: backLetters 0.5s ease forwards;
+}
+header .left .hiddenText span {
+  font-size: 24px;
+  font-family: "Nova Square", cursive;
+  animation: moveLetter 0.5s ease forwards;
+  cursor: default;
+}
+header .left .hiddenText p {
+  font-size: 24px;
+  cursor: default;
+  top: 10px;
+  font-family: "Nova Square", cursive;
+  animation: moveLetter 0.5s ease forwards;
+}
+header .mid {
+  display: flex;
+  position: relative;
+  left: 150px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 20px;
+}
+header .mid nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  gap: 15px;
+}
+header .mid nav ul span {
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
+  top: 3px;
+  cursor: default;
+}
+header .mid nav ul li {
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 24px;
+}
+header .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 0px 100px 0px 0px;
+}
+header .right .cart {
+  cursor: pointer;
+  padding-left: 20px;
+  font-size: 24px;
+  padding-right: 20px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.background .shadowww {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(100, 90, 77, 0.8);
+  z-index: 2;
+}
+.background img {
+  height: 120vh;
+  width: 100%;
+  min-width: 900px;
+  position: fixed;
+}
+
+.cart2 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 200px;
+  width: 90%;
+  align-items: start;
+  justify-content: center;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  height: 100vh;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  z-index: 3;
+}
+.cart2 .Dish {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: start;
+  align-items: center;
+  width: 18%;
+  min-width: 220px;
+  height: 20vh;
+}
+.cart2 .Dish p {
+  color: white;
+  font-size: 24px;
+  font-family: sans-serif;
+  cursor: default;
+  margin-bottom: 7px;
+}
+.cart2 .Dish .dishPic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart2 .Dish .dishPic .dishPicture {
+  width: 200px;
+}
+.cart2 .Dish .QuantityItems {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.cart2 .Dish .QuantityItems button {
+  background: rgb(255, 255, 255);
+  width: 20px;
+  height: 20px;
+  outline: none;
+  border: 0px;
+  font-weight: 800;
+  color: rgb(0, 0, 0);
+  position: relative;
+  top: -2px;
+  cursor: pointer;
+}
+
+.Active {
+  cursor: default;
+  color: white;
+}
+
+.spinIt {
+  animation: spinLogo 2.4s ease-in-out;
+}
+
+.logInIcon {
+  cursor: pointer;
+  font-size: 24px;
+  color: black;
+  transition: all 0.3s ease;
+}
+.logInIcon:hover {
+  color: white;
+}
+
+@keyframes spinLogo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveLetter {
+  from {
+    left: -50px;
+  }
+  to {
+    left: 10px;
+  }
+}
+@keyframes backLetters {
+  from {
+    left: 10px;
+  }
+  to {
+    left: -200px;
+  }
+}
+@keyframes growingWidth {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 230px;
+  }
+}
+@keyframes reduceWidth {
+  from {
+    width: 230px;
+  }
+  to {
+    width: 0px;
+  }
+}/*# sourceMappingURL=basket.css.map */

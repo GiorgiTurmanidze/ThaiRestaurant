@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket</title>
+
+    <link rel="icon" href="{% static 'mainPage/pics/chef.png' %}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'basketPage/basket.css' %}">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Grey+Qo&family=Nova+Square&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="left">
+            <img class="trigger" src="{% static 'mainPage/pics/chef.png' %}" alt="ThaiFood" width="70px">
+            <div class="hiddenText">
+
+            </div>
+        </div>
+
+        <div class="mid">
+
+            <nav>
+                <ul>
+                    <li class="Home">Home</li>
+                    <span class="slash">/</span>
+                    <li class="Menu">Menu</li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="right">
+            <i class="cart fa-solid fa-cart-shopping" style="color: #ff9924;"></i>
+        
+            <a class="logOut" href="{% url 'register' %}"><i class="fa-solid fa-user logInIcon"></i></a>
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="background">
+            <div class="shadowww"></div>
+            <img src="{% static 'mainPage/pics/bg.jpg' %}">
+        </div>
+
+        <div class="cart2">
+            
+        </div>
+
+    </main>
+    
+
+    <script src="{% static 'basketPage/basket.js' %}"></script>
+</body>
+
+</html>

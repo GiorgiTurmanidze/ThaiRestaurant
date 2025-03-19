@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+
+    <link rel="icon" href="{% static 'mainPage/pics/chef.png' %}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'menuPage/menu.css' %}">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Grey+Qo&family=Nova+Square&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="left">
+            <img class="trigger" src="{% static 'mainPage/pics/chef.png' %}" alt="ThaiFood" width="70px">
+            <div class="hiddenText">
+
+            </div>
+        </div>
+
+        <div class="mid">
+
+            <nav>
+                <ul>
+                    <li class="Home">Home</li>
+                    <span class="slash">/</span>
+                    <li class="Menu Active">Menu</li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="right">
+            <input type="text" name="searchBar" id="searchBar">
+            <i class="fa-solid fa-magnifying-glass search"></i>
+
+            <i class="cart fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+
+            <a class="logOut" href="{% url 'register' %}"><i class="fa-solid fa-user logInIcon"></i></a>
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="alertBox">
+            <div class="agreeAlt alt">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-check" style="color: #36ff39;"></i>
+                </div>
+
+                <div class="text" id="agreeText">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="denyAlt alt">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-xmark" style="color: #f50000;"></i>
+                </div>
+
+                <div class="text" id="denyText">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="background">
+            <div class="shadowww"></div>
+            <img src="{% static 'mainPage/pics/bg.jpg' %}">
+        </div>
+
+        <div class="cont">
+            
+            <div class="gridBox">
+                
+            </div>
+
+            <div class="specificDish">
+                
+            </div>
+            
+        </div>
+    </main>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="{% static 'menuPage/menu.js' %}"></script>
+
+    
+</body>
+
+</html>

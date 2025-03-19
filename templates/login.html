@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+
+    <link rel="icon" href="{% static 'mainPage/pics/chef.png' %}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'loginPage/login.css' %}">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Grey+Qo&family=Nova+Square&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="shadow">
+
+        <div class="alertBox">
+            <div class="agreeAlt alt" style="width: 60%;">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-check" style="color: #36ff39;"></i>
+                </div>
+
+                <div class="text" id="agreeText">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="denyAlt alt">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-xmark" style="color: #f50000;"></i>
+                </div>
+
+                <div class="text" id="denyText">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h1 class="title">Log In</h1>
+            <form id="myForm" method="post">
+                {% csrf_token %}
+
+                <div class="inputBox">
+                    <label for="fName">Username</label>
+                    <br>
+                    <input type="text" name="fName" id="fName" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="password">Password</label>
+                    <br>
+                    <input type="password" name="password" id="password" required>
+                </div>
+
+                <button type="submit" class="sub" onclick="logIn(event)">Log In</button>
+            </form>
+        </div>
+
+
+    </div>
+    
+
+    <script src="{% static 'loginPage/login.js' %}"></script>
+    
+
+    
+</body>
+
+</html>

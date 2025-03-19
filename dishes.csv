@@ -1,0 +1,28 @@
+id,name,price,nuts,image,vegeterian,spiciness,categoryId
+1,Laab kai chicken salad,10,True,https://course-jsbasic.javascript.ru/assets/products/laab_kai_chicken_salad.png,False,2,1
+2,Som tam papaya salad,9.5,False,https://course-jsbasic.javascript.ru/assets/products/som_tam_papaya_salad.png,True,0,1
+3,Tom yam kai,7,False,https://course-jsbasic.javascript.ru/assets/products/tom_yam.png,False,3,2
+4,Tom kha kai,7,False,https://course-jsbasic.javascript.ru/assets/products/tom_kha.png,False,3,2
+5,Tom kha koong,8,False,https://course-jsbasic.javascript.ru/assets/products/tom_kha.png,False,2,2
+6,Tom yam koong,8,False,https://course-jsbasic.javascript.ru/assets/products/tom_yam.png,False,4,2
+7,Tom yam vegetarian,7,False,https://course-jsbasic.javascript.ru/assets/products/tom_yam.png,True,1,2
+8,Tom kha vegetarian,7,False,https://course-jsbasic.javascript.ru/assets/products/tom_kha.png,True,1,2
+9,Sweet 'n sour chicken,14,True,https://course-jsbasic.javascript.ru/assets/products/sweet_n_sour.png,False,2,3
+10,Chicken cashew,14,True,https://course-jsbasic.javascript.ru/assets/products/chicken_cashew.png,False,1,3
+11,Kai see ew,14,False,https://course-jsbasic.javascript.ru/assets/products/kai_see_ew.png,False,4,3
+12,Beef massaman,14.5,False,https://course-jsbasic.javascript.ru/assets/products/beef_massaman.png,False,2,4
+13,Seafood chu chee,16,False,https://course-jsbasic.javascript.ru/assets/products/chu_chee.png,False,2,5
+14,Penang shrimp,16,True,https://course-jsbasic.javascript.ru/assets/products/red_curry.png,False,4,5
+15,Green curry veggies,12.5,True,https://course-jsbasic.javascript.ru/assets/products/green_curry.png,True,0,6
+16,Tofu cashew,12.5,True,https://course-jsbasic.javascript.ru/assets/products/tofu_cashew.png,True,0,6
+17,Red curry veggies,12.5,False,https://course-jsbasic.javascript.ru/assets/products/red_curry_vega.png,True,4,6
+18,Krapau tofu,12.5,False,https://course-jsbasic.javascript.ru/assets/products/krapau_vega.png,True,0,6
+19,Prawn crackers,2.5,False,https://course-jsbasic.javascript.ru/assets/products/kroepoek.png,False,1,7
+20,Fish cakes,6.5,False,https://course-jsbasic.javascript.ru/assets/products/fish_cakes.png,False,1,7
+21,Chicken satay,6.5,False,https://course-jsbasic.javascript.ru/assets/products/sate.png,False,1,7
+22,Satay sauce,1.5,False,https://course-jsbasic.javascript.ru/assets/products/satesaus.png,False,2,7
+23,Shrimp springrolls,6.5,False,https://course-jsbasic.javascript.ru/assets/products/koong_hom_pha.png,False,3,7
+24,Mini vegetarian spring rolls,6.5,False,https://course-jsbasic.javascript.ru/assets/products/mini_vega_springrolls.png,False,2,7
+25,Chicken springrolls,6.5,False,https://course-jsbasic.javascript.ru/assets/products/chicken_loempias.png,False,2,7
+26,Thai fried rice,7.5,False,https://course-jsbasic.javascript.ru/assets/products/fried_rice.png,False,2,8
+27,Fresh prawn crackers,2.5,False,https://course-jsbasic.javascript.ru/assets/products/kroepoek.png,False,1,8
