@@ -78,7 +78,16 @@ WSGI_APPLICATION = 'ThaiRestaurant.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ThaiRestaurant',
+        'USER': 'postgres',
+        'PASSWORD': 'Dreaming',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
