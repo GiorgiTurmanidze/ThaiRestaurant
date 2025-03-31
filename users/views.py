@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 
-# ✅ REGISTER API (Signup)
+# ✅ REGISTER API
 class SignUpView(APIView):
     permission_classes = [AllowAny]
 
@@ -32,7 +32,7 @@ class SignUpView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# ✅ LOGIN API (JWT Token Login)
+# ✅ LOGIN API
 class LoginView(APIView):
     permission_classes = [AllowAny]
 
@@ -54,7 +54,7 @@ class LoginView(APIView):
             return Response({"error": "Invalid username or password."}, status=status.HTTP_401_UNAUTHORIZED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-# ✅ PROTECTED VIEW (Requires JWT) 
+# ✅ PROTECTED VIEW
 class SignInView(APIView):
     permission_classes = [IsAuthenticated]
 

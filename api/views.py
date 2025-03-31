@@ -19,6 +19,16 @@ class BasketViewSet(viewsets.ModelViewSet):
     serializer_class = BasketSerializer
     permission_classes = [IsAuthenticated]
 
+    @action(detail=False, methods=['POST'])
+    def finish_order(self, request):
+        """Convert the user's basket into an order."""
+        basket, created = Basket.objects.get_or_create(user=request.user)
+
+        order = basket.convert_to_order()
+        if order:
+            return Response({"message": "Order created successfully!", "order_id": order.id})
+        return Response({"message": "Basket is empty."}, status=400)
+
     def get_queryset(self):
         """Return only the baskets belonging to the logged-in user."""
         user = self.request.user

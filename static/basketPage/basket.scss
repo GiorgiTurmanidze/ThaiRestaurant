@@ -138,9 +138,10 @@ header {
     flex-direction: row;
     position: relative;
     top: 200px;
-    width: 90%;
+    width: 70%;
+    margin-right: 400px;
     align-items: start;
-    justify-content: center;
+    justify-content: start;
     flex-shrink: 1;
     flex-wrap: wrap;
     height: 100vh;
@@ -190,6 +191,76 @@ header {
                 cursor: pointer;
             }
         }
+    }
+}
+
+.orderFixed {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 20%;
+    height: 100vh;
+    right: 0;
+    top: 100px;
+    gap: 0px;
+    margin: 0;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    padding: 20px 10px;
+    h1 {
+        font-family: "Nova Square", cursive;
+        padding-bottom: 20px;
+    }
+    .topOrder {
+        position: relative;
+        height: 75vh;
+        .order-tab {
+            width: 90%;
+            display: flex;
+            position: relative;
+            top: 30px;
+            box-sizing: border-box;
+            .order-list {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                box-sizing: border-box;
+                overflow-y: scroll;
+                height: 60vh;
+                width: 100%;
+                justify-content: center;
+                align-items: start;
+                li {
+                    font-size: 16px;
+                    font-family: sans-serif;
+                }
+            }
+        }
+    }
+    .bottomOrder {
+        position: relative;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        button {
+            width: 100%;
+            background-color: rgb(190, 157, 118);
+            border: 1px solid white;
+            border-radius: 15px;
+            outline: none;
+            height: 5vh;
+            font-size: 30px;
+            color: white;
+            position: relative;
+            bottom: 10px;
+        }
+    }
+    .OrderBtn {
+        cursor: pointer;
     }
 }
 

@@ -167,6 +167,88 @@ function addCardClickListeners() {
                             showError("Please Log-in To Use Our Menu.");
                         });
                     })
+
+                    const order = document.querySelector('.order')
+
+                    order.addEventListener('click', function() {
+                        const dishId = productData.id; 
+                        const quantity = 1;
+
+                        fetch('http://localhost:8000/api/baskets/my_basket', {
+                            method: 'GET',
+                            headers: {
+                                'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(basketData => {
+                            const existingItem = basketData.items.find(item => item.dish === dishId);
+
+
+                            if (existingItem) {
+                                console.log("Found existing item:", existingItem);
+                                const updatedItem = {
+                                    ...existingItem,
+                                    quantity: existingItem.quantity += quantity
+                                }
+                                
+                                fetch(`http://localhost:8000/api/basket-items/${existingItem.id}/`, {
+                                    method: 'PATCH',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                                    },
+                                    body: JSON.stringify({
+                                        quantity: updatedItem.quantity
+                                    })
+                                })
+                                .then(response => response.json())
+                                .then(updatedData => {
+                                    console.log("Basket item updated:", updatedData);
+                                    SpecificDish.innerHTML = ''
+                                    SpecificDish.classList.remove('specificDishActive')
+                                    SpecificDish.style.display = "none"
+                                    window.open('/basket/', '_self')
+                                })
+                                .catch(error => {
+                                    console.error("Error updating item in basket:", error);
+                                    showError(`${error}`);
+                                });
+                            } else {
+                                const basketItemData = {
+                                    dish: dishId,
+                                    quantity: quantity
+                                };
+        
+                                fetch('http://localhost:8000/api/basket-items/', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                                    },
+                                    body: JSON.stringify(basketItemData)
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log("Item added to basket:", data);
+                                    window.open('/basket/', '_self')
+                                    SpecificDish.innerHTML = ''
+                                    SpecificDish.classList.remove('specificDishActive')
+                                    SpecificDish.style.display = "none"
+                                })
+                                .catch(error => {
+                                    showError(`${error}`);
+                                    console.error("Error adding item to basket:", error);
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            SpecificDish.innerHTML = ''
+                            SpecificDish.classList.remove('specificDishActive')
+                            SpecificDish.style.display = "none"
+                            showError("Please Log-in To Use Our Menu.");
+                        });
+                    })
                 })
         })
     })

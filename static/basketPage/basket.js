@@ -20,11 +20,18 @@ home.addEventListener('click', function() {
     window.open('/ThaiRestaurant/', '_self')
 })
 
+menu.addEventListener('click', function() {
+    window.open('/menu/', '_self')
+})
+
 function updateBasket(products) {
     myBasket = products.items;
 
     console.log("my Basket", myBasket);
     let cart = document.querySelector('.cart2');
+
+    let orderList = document.querySelector('.order-list');
+    orderList.innerHTML = ''
 
     cart.innerHTML = '';
 
@@ -43,6 +50,10 @@ function updateBasket(products) {
             </div>
         </div>
         `;
+
+        let li = document.createElement('li');
+        li.textContent = `${el.dish_name} - ${el.quantity}x - $${el.dish_price * el.quantity}`;
+        orderList.appendChild(li);
     });
 
     document.querySelectorAll('.incQuan').forEach((incBtn) => {
@@ -66,6 +77,7 @@ function updateBasket(products) {
                 product.quantity = newQuantity;
                 this.parentElement.querySelector('.quantity').textContent = `${newQuantity}x`;
                 console.log("Basket item updated:", updatedData);
+                window.location.reload()
             })
             .catch(error => {
                 console.error("Error updating item in basket:", error);
@@ -95,6 +107,7 @@ function updateBasket(products) {
                     product.quantity = newQuantity;
                     this.parentElement.querySelector('.quantity').textContent = `${newQuantity}x`;
                     console.log("Basket item updated:", updatedData);
+                    window.location.reload()
                 })
                 .catch(error => {
                     console.error("Error updating item in basket:", error);
@@ -107,14 +120,64 @@ function updateBasket(products) {
                         'Authorization': `Bearer ${localStorage.getItem('access_token')}`
                     }
                 })
+                window.location.reload()
             }
         });
     });
 }
 
-menu.addEventListener('click', function() {
-    window.open('/menu/', '_self')
+let btn = document.querySelector('.OrderBtn')
+
+async function finishOrder() {
+    const response = await fetch("http://localhost:8000/api/baskets/finish_order/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem('access_token')}`,
+        }
+    });
+
+    const data = await response.json();
+    alert(data.message);
+    window.location.reload()
+}
+
+btn.addEventListener('click', () => {
+    finishOrder()
+    // fetch('http://localhost:8000/api/baskets/my_basket/', {
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+    //     }
+    // })
+    // .then(response => response.json())
+    // .then(myBasket => {
+    //     fetch(`http://localhost:8000/api/baskets/${myBasket.id}/`, {
+    //         method: 'DELETE',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+    //         }
+    //     })
+    //     window.location.reload()
+    // })
 })
+
+window.onload(orderBtnText())
+
+function orderBtnText() {
+    btn.innerHTML = "Order $"
+    fetch('http://localhost:8000/api/baskets/my_basket/', {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+        }
+    })
+    .then(response => response.json())
+    .then(totalPrice => {
+        btn.innerHTML += `${totalPrice.total_price}`
+    })
+}
 
 let hiddenText = document.querySelector('.hiddenText')
 
